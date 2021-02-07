@@ -228,12 +228,12 @@
             
             <div class="markdown-body">
               <h2 id="原型到原型链"><a href="#原型到原型链" class="headerlink" title="原型到原型链"></a>原型到原型链</h2><h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><p>每个函数都有一个prototype属性，这个属性指向了一个对象，这个对象正是用该构造函数创建的实例的原型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// prototype 是函数才有的属性</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br><br>&#125;<br>Person.prototype.alias = <span class="hljs-string">&#x27;monster&#x27;</span><br><span class="hljs-keyword">const</span> michael = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-keyword">const</span> andrew = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-built_in">console</span>.log(michael.alias) <span class="hljs-comment">// monster</span><br><span class="hljs-built_in">console</span>.log(andrew.alias) <span class="hljs-comment">// monster</span><br></code></pre></td></tr></table></figure>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// prototype 是函数才有的属性</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br><br>&#125;<br>Person.prototype.alias = <span class="hljs-string">&#x27;monster&#x27;</span><br><span class="hljs-keyword">const</span> michael = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-keyword">const</span> andrew = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-built_in">console</span>.log(michael.alias) <span class="hljs-comment">// monster</span><br><span class="hljs-built_in">console</span>.log(andrew.alias) <span class="hljs-comment">// monster</span><br></code></pre></td></tr></table></figure></code></pre>
 <h3 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a>__proto__</h3><p>每一个JavaScritp对象(null除外)都有一个__proto__属性，这个属性会指向该对象的原型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br><br>&#125;<br><span class="hljs-keyword">const</span> michael = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-built_in">console</span>.log(michael.__proto__ === Person.prototype) <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
-<p>原型： 每一个JavaScript对象(null除外)在创建的时候会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型继承属性</p>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br><br>&#125;<br><span class="hljs-keyword">const</span> michael = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-built_in">console</span>.log(michael.__proto__ === Person.prototype) <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+原型： 每一个JavaScript对象(null除外)在创建的时候会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型继承属性</code></pre>
 <h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>每个原型都有一个 constructor 属性指向关联的构造函数</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> <span class="hljs-comment">&#123;</span></span><br><span class="hljs-function"><span class="hljs-comment"></span></span><br><span class="hljs-function"><span class="hljs-comment">&#125;</span></span><br><span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-title">log</span><span class="hljs-params">(Person === Person.prototype.<span class="hljs-keyword">constructor</span>)</span>;</span> <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<pre><code><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> <span class="hljs-comment">&#123;</span></span><br><span class="hljs-function"><span class="hljs-comment"></span></span><br><span class="hljs-function"><span class="hljs-comment">&#125;</span></span><br><span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-title">log</span><span class="hljs-params">(Person === Person.prototype.<span class="hljs-keyword">constructor</span>)</span>;</span> <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure></code></pre>
 <h3 id="如下图-对象之间形成了一条原型链"><a href="#如下图-对象之间形成了一条原型链" class="headerlink" title="如下图 对象之间形成了一条原型链"></a>如下图 对象之间形成了一条原型链</h3><p><img src="/images/prototypeChain.png" srcset="/img/loading.gif"></p>
 
             </div>
@@ -246,7 +246,7 @@
                     
                       <a class="hover-with-bg" href="/categories/js/">js</a>
                     
-                      <a class="hover-with-bg" href="/categories/js/react/">react</a>
+                      <a class="hover-with-bg" href="/categories/js/js%E5%9F%BA%E7%A1%80/">js基础</a>
                     
                   </div>
                 
@@ -276,12 +276,6 @@
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2021/01/05/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
