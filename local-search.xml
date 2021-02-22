@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>网络模型</title>
+    <link href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"/>
+    <url>/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<h3 id="OSI-和-TCP-IP模型对比"><a href="#OSI-和-TCP-IP模型对比" class="headerlink" title="OSI 和 TCP/IP模型对比"></a>OSI 和 TCP/IP模型对比</h3><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/60be38880ed346258a8fd4c59538d39f~tplv-k3u1fbpfcp-watermark.image"></p><h3 id="TCP-IP-模型对应的相关协议及对应数据单位"><a href="#TCP-IP-模型对应的相关协议及对应数据单位" class="headerlink" title="TCP/IP 模型对应的相关协议及对应数据单位"></a>TCP/IP 模型对应的相关协议及对应数据单位</h3><ul><li>应用层：<ul><li>HTTP, FTP</li><li>报文(message)</li></ul></li><li>传输层：<ul><li>TCP, UDP</li><li>数据段(segment)</li></ul></li><li>网络层：<ul><li>IP, ICMP </li><li>分组或者数据包(packets)</li></ul></li><li>数据链路层：<ul><li>ARP, RARP</li><li>帧(frame) 物理层传输的单位是比特(bit)</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>http缓存</title>
+    <link href="/2021/02/22/http%E7%BC%93%E5%AD%98/"/>
+    <url>/2021/02/22/http%E7%BC%93%E5%AD%98/</url>
+    
+    <content type="html"><![CDATA[<h2 id="HTTP缓存分为强制缓存和协商缓存"><a href="#HTTP缓存分为强制缓存和协商缓存" class="headerlink" title="HTTP缓存分为强制缓存和协商缓存"></a>HTTP缓存分为强制缓存和协商缓存</h2><h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><p>有俩个字段来表明失效规则（Expires / Cache-control）</p><ul><li>Expires的值表示服务端返回的到期时间，即下一次请求，如果时间小于服务器到期时间 直接使用缓存数据 <ol><li>Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，一般用来向下兼容</li><li>到期时间是由服务端生成的，如果修改了客户端的时间，就会导致缓存命中的误差</li></ol></li><li>Cache-control 有如下几个值：<ol><li>private 客户端可以缓存</li><li>public 客户端和代理服务器都要缓存</li><li>max-age 如果值为 800， 意思就是缓存的内容将在 800 秒后失效</li><li>no-cache 需使用协商缓存来验证缓存数据</li><li>no-store 所有内容都不会缓存，<strong>强制缓存和协商缓存都不会触发</strong></li></ol></li></ul><h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>对比强制缓存，协商缓存会<strong>发送请求</strong>到服务器 </p><ul><li>Last-Modified / If-Modified-Since<ul><li>Last-Modified 服务器在相应请求时，告诉浏览器资源的最后修改时间</li><li>If-Modified-Since 再次请求服务器时，浏览器会将上次请求到的Last-Modified的值作为 If-Modified-Since值发送给服务器，服务器接受后，发现有If-Modified-Since字段，则与被请求资源的最后修改时间进行对比，如果资源的最后修改时间大于If-Modified-Since的值，说明资源被改动过，则响应整体的资源内容。如果不大于，说明资源无修改 则相应 <strong>HTTP 304</strong>，告诉浏览器继续使用缓存的数据</li></ul></li><li>Etag / If-None-Match(优先级高于Last-Modified / If-Modified-Since)<ul><li>Etag 服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器决定）</li><li>If-None-Match 再次请求服务器时，浏览器会将上次请求到的Etag的值作为 If-None-Match值发送给服务器，服务器接受后，发现有If-None-Match字段，则与被请求资源的最后修改时间进行对比，不同，说明资源被改动过，则响应整体的资源内容。相同，说明资源无修改 则相应 <strong>HTTP 304</strong>，告诉浏览器继续使用缓存的数据</li></ul></li></ul><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ol><li><a href="https://www.cnblogs.com/chenqf/p/6386163.html">彻底弄懂HTTP缓存机制及原理</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>箭头函数</title>
     <link href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
     <url>/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</url>
@@ -226,16 +276,6 @@
     
     <content type="html"><![CDATA[]]></content>
     
-    
-    <categories>
-      
-      <category>css</category>
-      
-      <category>js</category>
-      
-      <category>css</category>
-      
-    </categories>
     
     
     <tags>
