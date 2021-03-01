@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>http缓存 - lei</title>
+  <title>为什么尽量不要用index作为key - lei</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="http缓存">
+            <span class="h2" id="subtitle" title="为什么尽量不要用index作为key">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-22 22:11" pubdate>
-        2021年2月22日 晚上
+      <time datetime="2021-02-24 21:32" pubdate>
+        2021年2月24日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      608 字
+      302 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      3
        分钟
     </span>
   
@@ -224,40 +224,13 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">http缓存</h1>
+            <h1 style="display: none">为什么尽量不要用index作为key</h1>
             
             <div class="markdown-body">
-              <h2 id="HTTP缓存分为强制缓存和协商缓存"><a href="#HTTP缓存分为强制缓存和协商缓存" class="headerlink" title="HTTP缓存分为强制缓存和协商缓存"></a>HTTP缓存分为强制缓存和协商缓存</h2><h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><p>有俩个字段来表明失效规则（Expires / Cache-control）</p>
-<ul>
-<li>Expires的值表示服务端返回的到期时间，即下一次请求，如果时间小于服务器到期时间 直接使用缓存数据 <ol>
-<li>Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，一般用来向下兼容</li>
-<li>到期时间是由服务端生成的，如果修改了客户端的时间，就会导致缓存命中的误差</li>
-</ol>
-</li>
-<li>Cache-control 有如下几个值：<ol>
-<li>private 客户端可以缓存</li>
-<li>public 客户端和代理服务器都要缓存</li>
-<li>max-age 如果值为 800， 意思就是缓存的内容将在 800 秒后失效</li>
-<li>no-cache 需使用协商缓存来验证缓存数据</li>
-<li>no-store 所有内容都不会缓存，<strong>强制缓存和协商缓存都不会触发</strong></li>
-</ol>
-</li>
-</ul>
-<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>对比强制缓存，协商缓存会<strong>发送请求</strong>到服务器 </p>
-<ul>
-<li>Last-Modified / If-Modified-Since<ul>
-<li>Last-Modified 服务器在相应请求时，告诉浏览器资源的最后修改时间</li>
-<li>If-Modified-Since 再次请求服务器时，浏览器会将上次请求到的Last-Modified的值作为 If-Modified-Since值发送给服务器，服务器接受后，发现有If-Modified-Since字段，则与被请求资源的最后修改时间进行对比，如果资源的最后修改时间大于If-Modified-Since的值，说明资源被改动过，则响应整体的资源内容。如果不大于，说明资源无修改 则相应 <strong>HTTP 304</strong>，告诉浏览器继续使用缓存的数据</li>
-</ul>
-</li>
-<li>Etag / If-None-Match(优先级高于Last-Modified / If-Modified-Since)<ul>
-<li>Etag 服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器决定）</li>
-<li>If-None-Match 再次请求服务器时，浏览器会将上次请求到的Etag的值作为 If-None-Match值发送给服务器，服务器接受后，发现有If-None-Match字段，则与被请求资源的最后修改时间进行对比，不同，说明资源被改动过，则响应整体的资源内容。相同，说明资源无修改 则相应 <strong>HTTP 304</strong>，告诉浏览器继续使用缓存的数据</li>
-</ul>
-</li>
-</ul>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenqf/p/6386163.html">彻底弄懂HTTP缓存机制及原理</a></li>
+              <h3 id="1-因为这样做会导致性能变差-这个策略在元素不进行重新排序时比较合适，但一旦有顺序修改，diff-就会变得慢-因为组件的子元素会重新渲染"><a href="#1-因为这样做会导致性能变差-这个策略在元素不进行重新排序时比较合适，但一旦有顺序修改，diff-就会变得慢-因为组件的子元素会重新渲染" class="headerlink" title="1.因为这样做会导致性能变差(这个策略在元素不进行重新排序时比较合适，但一旦有顺序修改，diff 就会变得慢, 因为组件的子元素会重新渲染)"></a>1.因为这样做会导致性能变差(这个策略在元素不进行重新排序时比较合适，但一旦有顺序修改，diff 就会变得慢, 因为组件的子元素会重新渲染)</h3><ol>
+<li>index为key：<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs maxima">变化前数组的值是[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]，<span class="hljs-built_in">key</span>就是对应的下标：<span class="hljs-number">0</span>，<span class="hljs-number">1</span>，<span class="hljs-number">2</span>，<span class="hljs-number">3</span>,   <br>变化后数组的值是[<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]，<span class="hljs-built_in">key</span>对应的下标也是：<span class="hljs-number">0</span>，<span class="hljs-number">1</span>，<span class="hljs-number">2</span>，<span class="hljs-number">3</span><br><br>那么<span class="hljs-built_in">diff</span>算法在变化前的数组找到<span class="hljs-built_in">key</span> =<span class="hljs-number">0</span>的值是<span class="hljs-number">1</span>，在变化后数组里找到的<span class="hljs-built_in">key</span>=<span class="hljs-number">0</span>的值是<br>因为子元素不一样就重新删除并更新<br></code></pre></td></tr></table></figure></li>
+<li>唯一key<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs maxima">变化前数组的值是[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]，<span class="hljs-built_in">key</span>就是对应的下标：id0，id1，id2，id3<br>变化后数组的值是[<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]，<span class="hljs-built_in">key</span>对应的下标也是：id3，id2，id1，id0<br><br>那么<span class="hljs-built_in">diff</span>算法在变化前的数组找到<span class="hljs-built_in">key</span> =id0的值是<span class="hljs-number">1</span>，在变化后数组里找到的<span class="hljs-built_in">key</span>=id0的值也是<span class="hljs-number">1</span>，<br>因为子元素相同，就不删除并更新，只做移动操作，这就提升了性能<br></code></pre></td></tr></table></figure>
+<h3 id="2-还可能引起组件状态的问题-可查看下面的例子"><a href="#2-还可能引起组件状态的问题-可查看下面的例子" class="headerlink" title="2.还可能引起组件状态的问题,可查看下面的例子"></a>2.还可能引起组件状态的问题,可查看下面的例子</h3><a target="_blank" rel="noopener" href="https://codesandbox.io/s/amazing-ramanujan-ohkb0?file=/src/App.js">使用索引作为key的负面影响</a></li>
 </ol>
 
             </div>
@@ -268,9 +241,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+                      <a class="hover-with-bg" href="/categories/js/">js</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/%E7%BC%93%E5%AD%98/">缓存</a>
+                      <a class="hover-with-bg" href="/categories/js/react%E7%9B%B8%E5%85%B3/">react相关</a>
                     
                   </div>
                 
@@ -278,7 +251,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+                      <a class="hover-with-bg" href="/tags/js/">js</a>
                     
                   </div>
                 
@@ -291,9 +264,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">
+                      <a href="/2021/03/01/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">网络模型</span>
+                        <span class="hidden-mobile">DNS域名解析</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -301,8 +274,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
-                        <span class="hidden-mobile">箭头函数</span>
+                      <a href="/2021/02/23/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%8E%B7%E5%BE%97%E9%A1%B5%E9%9D%A2%E5%88%B0%E8%BF%87%E7%A8%8B/">
+                        <span class="hidden-mobile">从输入url到获得页面到过程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

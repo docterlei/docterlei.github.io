@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>css - lei</title>
+  <title>xss攻击 - lei</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="css">
+            <span class="h2" id="subtitle" title="xss攻击">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-17 18:41" pubdate>
-        2021年1月17日 晚上
+      <time datetime="2021-02-23 21:04" pubdate>
+        2021年2月23日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      1k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      10
        分钟
     </span>
   
@@ -224,20 +224,84 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">css</h1>
+            <h1 style="display: none">xss攻击</h1>
             
             <div class="markdown-body">
-              
+              <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><blockquote>
+<p>Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全</p>
+</blockquote>
+<h3 id="XSS分类"><a href="#XSS分类" class="headerlink" title="XSS分类"></a>XSS分类</h3><ol>
+<li><p>存储型</p>
+<ul>
+<li>概念：存储型XSS又被称为持久性XSS，它是最危险的一种跨站脚本，相比反射型XSS和DOM型XSS具有更高的隐蔽性，所以危害更大，它不需要用户手动触发</li>
+<li>攻击步骤：<ol>
+<li>击者将恶意代码提交到目标网站的数据库中</li>
+<li>用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器</li>
+<li>用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作</li>
+</ol>
+</li>
+<li>攻击方法：常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等</li>
+</ul>
+</li>
+<li><p>反射型</p>
+<ul>
+<li>概念：反射型XSS也被称为非持久性XSS。发出请求时，XSS代码出现在URL中，最后输入提交到服务器，服务器解析后在响应内容中出现这段XSS代码，最后浏览器解析执行</li>
+<li>攻击步骤：<ol>
+<li>攻击者构造出特殊的 URL，其中包含恶意代码</li>
+<li>户打开带有恶意代码的 URL 时，网站服务端将恶意代码从 URL 中取出，拼接在 HTML 中返回给浏览器</li>
+<li>用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作</li>
+</ol>
+</li>
+<li>攻击方法：常见于通过 URL 传递参数的功能，如网站搜索、跳转等</li>
+</ul>
+</li>
+<li><p>DOM型</p>
+<ul>
+<li>概念：DOM 型 XSS 攻击中，<strong>取出和执行</strong>恶意代码由浏览器端完成，属于前端 JavaScript 自身的安全漏洞，而其他两种 XSS 都属于<strong>服务端</strong>的安全漏洞</li>
+<li>攻击步骤：<ol>
+<li>攻击者构造出特殊的 URL，其中包含恶意代码</li>
+<li>用户打开带有恶意代码的 URL</li>
+<li>用户浏览器接收到响应后解析执行，前端 JavaScript 取出 URL 中的恶意代码并执行</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作</li>
+</ol>
+</li>
+<li>攻击方法：DOM 型 XSS 攻击，实际上就是网站前端 JavaScript 代码本身不够严谨，把不可信的数据当作代码执行了。在使用 .innerHTML、.outerHTML、document.write() 时要特别小心，不要把不可信的数据作为 HTML 插到页面上，而应尽量使用 .textContent、.setAttribute() 等。如果用 Vue/React 技术栈，并且不使用 v-html/dangerouslySetInnerHTML 功能，就在前端 render 阶段避免 innerHTML、outerHTML 的 XSS 隐患。DOM 中的内联事件监听器，如 location、onclick、onerror、onload、onmouseover 等，&lt;a&gt; 标签的 href 属性，JavaScript 的 eval()、setTimeout()、setInterval() 等，都能把字符串作为代码运行。如果不可信的数据拼接到字符串中传递给这些 API，很容易产生安全隐患，请务必避免。</li>
+</ul>
+</li>
+</ol>
+<h3 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h3><ol>
+<li>对输入(和URL参数)进行过滤，对输出进行编码。</li>
+<li>内容安全策略（内容安全策略）<blockquote>
+<p>CSP 的实质就是白名单制度，开发者明确告诉客户端，哪些外部资源可以加载和执行，等同于提供白名单。它的实现和执行全部由浏览器完成，开发者只需提供配置</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/2018/09/27/fe-security.html">如何防止XSS攻击?</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/09/csp.html">Content Security Policy 入门教程</a></li>
+</ol>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/css/">css</a>
+                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
                     
                   </div>
                 
@@ -250,9 +314,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/29/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/">
+                      <a href="/2021/02/23/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%8E%B7%E5%BE%97%E9%A1%B5%E9%9D%A2%E5%88%B0%E8%BF%87%E7%A8%8B/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">词法作用域和动态作用域</span>
+                        <span class="hidden-mobile">从输入url到获得页面到过程</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -260,8 +324,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/17/%E5%8E%9F%E5%9E%8B%E5%88%B0%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-                        <span class="hidden-mobile">原型到原型链</span>
+                      <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">
+                        <span class="hidden-mobile">网络模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
