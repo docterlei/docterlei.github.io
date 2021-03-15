@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      799 字
+      948 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      10
        分钟
     </span>
   
@@ -234,6 +234,9 @@
 处于 SYN-RCVD 状态
 3. 客户端收到服务端报文后，还要向服务端回应一个应答报文，首先该应答报文 TCP 首部 ACK 标志位置为 1， 其次 确认应答号 字段填入 server_isn + 1
 ,最后把报文发送给服务端，这次报文可以携带数据，之后客户端处于 ESTABLISHED，服务端收到客户端的应答报文后，也进入 ESTABLISHED</code></pre>
+<h3 id="序列号"><a href="#序列号" class="headerlink" title="序列号"></a>序列号</h3><pre><code>在建立连接时由计算机生成的随机数作为其初始值，通过 SYN 包传给接收端主机，每发送一次数据，就「累加」一次该「数据字节数」的大小。
+**用来解决网络包乱序问题**。</code></pre>
+<h3 id="确认应答号"><a href="#确认应答号" class="headerlink" title="确认应答号"></a>确认应答号</h3><pre><code>指下一次「期望」收到的数据的序列号，发送端收到这个确认应答以后可以认为在这个序号以前的数据都已经被正常接收。**用来解决不丢包的问题**。</code></pre>
 <h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><pre><code>1. 客户端打算关闭连接， 此时会发送一个 TCP 首部 FIN 标志位为 1 的报文， 即 FIN 报文， 之后客户端进入 FIN_WAIT_1 状态。
 2. 服务端收到该报文后，就向客户端发送 ACK 应答报文，接着服务端进入 CLOSED_WAIT 状态
 3. 客户端收到服务端的 ACK 应答报文后，进入 FIN_WAIT_2 状态
@@ -247,6 +250,9 @@
 2. 服务器收到客户端的 FIN 报文时，先回一个 ACK 应答报文， 而服务端可能还有数据需要处理和发送，
 等服务端不再发送数据时，才发送 FIN 报文给客户端来表示同意现在关闭连接。
 从上面过程可知，服务端通常需要等待完成数据的发送和处理，所以服务端的 ACK 和 FIN 一般都会分开发送， 从而比三次握手导致多了一次</code></pre>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/bHZ2_hgNQTKFZpWMCfUH9A">实战！我用“大白鲨”让你看见 TCP</a></li>
+</ol>
 
             </div>
             <hr>
