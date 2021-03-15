@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>TCP</title>
+    <link href="/2021/03/08/TCP/"/>
+    <url>/2021/03/08/TCP/</url>
+    
+    <content type="html"><![CDATA[<h3 id="建立-TCP-连接-，而-HTTPS-在-TCP-三次握手之后，还需进行-SSL-TSL-的握手过程，才可进入加密报文传输"><a href="#建立-TCP-连接-，而-HTTPS-在-TCP-三次握手之后，还需进行-SSL-TSL-的握手过程，才可进入加密报文传输" class="headerlink" title="建立 TCP 连接 ，而 HTTPS 在 TCP 三次握手之后，还需进行 SSL / TSL 的握手过程，才可进入加密报文传输"></a>建立 TCP 连接 ，而 HTTPS 在 TCP 三次握手之后，还需进行 SSL / TSL 的握手过程，才可进入加密报文传输</h3><h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><pre><code>1. 第一次握手： 客户端会随机初始化序号 （clent_isn），将此序号置于 TCP 首部的 序号 字段中， 同时把 SYN 标志位置为 1，表示 SYN 报文。接着把第一个 SYN 报文 发送给服务端，表示向服务端发起连接，该报文不包含应用层数据，之后客户端处于 SYN-SENT 状态2. 服务端收到客户端的 SYN 报文后， 首先服务端也初始化自己的序号（server_isn），将此序号填入 TCP 首部的序号字段中， 其次把 TCP 首部的 确认应答号 字段填入 client_isn + 1,接着把 SYN 和 ACK 标志位置为 1， 最后把该报文发给客户端，该报文也不包含应用层数据，之后服务端处于 SYN-RCVD 状态3. 客户端收到服务端报文后，还要向服务端回应一个应答报文，首先该应答报文 TCP 首部 ACK 标志位置为 1， 其次 确认应答号 字段填入 server_isn + 1,最后把报文发送给服务端，这次报文可以携带数据，之后客户端处于 ESTABLISHED，服务端收到客户端的应答报文后，也进入 ESTABLISHED</code></pre><h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><pre><code>1. 客户端打算关闭连接， 此时会发送一个 TCP 首部 FIN 标志位为 1 的报文， 即 FIN 报文， 之后客户端进入 FIN_WAIT_1 状态。2. 服务端收到该报文后，就向客户端发送 ACK 应答报文，接着服务端进入 CLOSED_WAIT 状态3. 客户端收到服务端的 ACK 应答报文后，进入 FIN_WAIT_2 状态4. 等待服务端处理完数据后， 也向客户端发送 FIN 报文， 之后服务端进入 LAST_ACK 状态5. 客户端收到服务端的 FIN 报文后， 回一个 ACK 应答报文， 之后进入 TIME_WAIT状态6. 服务器收到了 ACK 应答报文后，就进入了 CLOSE 状态， 至此服务端已经完成连接的关闭7. 客户端在经过 2MSL（60秒） 一段时间后，自动进入 CLOSE 状态，至此客户端也完成连接的关闭因为每个方向都需要一个 FIN 和 一个 ACK，因此通常被称为 四次挥手， 有一点需要注意： **主动关闭连接的 才有 TIME_WAIT状态**</code></pre><h4 id="为什么挥手需要四次"><a href="#为什么挥手需要四次" class="headerlink" title="为什么挥手需要四次"></a>为什么挥手需要四次</h4><pre><code>1. 关闭连接时，客户端向服务端发送 FIN 时，仅仅表示客户端不再发送数据了但是还是能接收数据2. 服务器收到客户端的 FIN 报文时，先回一个 ACK 应答报文， 而服务端可能还有数据需要处理和发送，等服务端不再发送数据时，才发送 FIN 报文给客户端来表示同意现在关闭连接。从上面过程可知，服务端通常需要等待完成数据的发送和处理，所以服务端的 ACK 和 FIN 一般都会分开发送， 从而比三次握手导致多了一次</code></pre><h4 id="为什么-TIME-WAIT-等待的时间是-2MSL？"><a href="#为什么-TIME-WAIT-等待的时间是-2MSL？" class="headerlink" title="为什么 TIME_WAIT 等待的时间是 2MSL？"></a>为什么 TIME_WAIT 等待的时间是 2MSL？</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络</category>
+      
+      <category>网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>DNS域名解析</title>
     <link href="/2021/03/01/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
     <url>/2021/03/01/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</url>
@@ -170,7 +197,7 @@
     <link href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
     <url>/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</url>
     
-    <content type="html"><![CDATA[<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h3 id="1-没有-this-所以需要通过查找作用域链来确定-this-的值。这就意味着如果箭头函数被非箭头函数包含，this-绑定的就是最近一层非箭头函数的-this"><a href="#1-没有-this-所以需要通过查找作用域链来确定-this-的值。这就意味着如果箭头函数被非箭头函数包含，this-绑定的就是最近一层非箭头函数的-this" class="headerlink" title="1. 没有 this 所以需要通过查找作用域链来确定 this 的值。这就意味着如果箭头函数被非箭头函数包含，this 绑定的就是最近一层非箭头函数的 this"></a>1. 没有 this 所以需要通过查找作用域链来确定 this 的值。这就意味着如果箭头函数被非箭头函数包含，this 绑定的就是最近一层非箭头函数的 this</h3><h3 id="2-没有-arguments"><a href="#2-没有-arguments" class="headerlink" title="2. 没有 arguments"></a>2. 没有 arguments</h3><h3 id="3-不能通过-new-关键字调用"><a href="#3-不能通过-new-关键字调用" class="headerlink" title="3. 不能通过 new 关键字调用"></a>3. 不能通过 new 关键字调用</h3><h3 id="4-没有原型"><a href="#4-没有原型" class="headerlink" title="4. 没有原型"></a>4. 没有原型</h3><h3 id="5-没有-super"><a href="#5-没有-super" class="headerlink" title="5. 没有 super"></a>5. 没有 super</h3><blockquote><p>this 和 super 的区别：<br>  this 关键词指向函数所在的当前对象<br>  super 指向的是当前对象的原型对象</p></blockquote><h3 id="6-没有-new-target"><a href="#6-没有-new-target" class="headerlink" title="6. 没有 new.target"></a>6. 没有 new.target</h3><blockquote><p>因为不能使用 new 调用，所以也没有 new.target 值。<br>new是从构造函数生成实例对象的命令。ES6 为new命令引入了一个new.target属性，<br>该属性一般用在构造函数之中，返回new命令作用于的那个构造函数。<br>如果构造函数不是通过new命令或Reflect.construct()调用的，<br>new.target会返回undefined，因此这个属性可以用来确定构造函数是怎么调用的</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h3 id="1-没有-this-所以需要通过查找作用域链来确定-this-的值。这就意味着如果箭头函数被非箭头函数包含，this-绑定的就是最近一层非箭头函数的-this"><a href="#1-没有-this-所以需要通过查找作用域链来确定-this-的值。这就意味着如果箭头函数被非箭头函数包含，this-绑定的就是最近一层非箭头函数的-this" class="headerlink" title="1. 没有 this 所以需要通过查找作用域链来确定 this 的值。这就意味着如果箭头函数被非箭头函数包含，this 绑定的就是最近一层非箭头函数的 this"></a>1. 没有 this 所以需要通过查找作用域链来确定 this 的值。这就意味着如果箭头函数被非箭头函数包含，this 绑定的就是最近一层非箭头函数的 this</h3><h3 id="2-没有-arguments"><a href="#2-没有-arguments" class="headerlink" title="2. 没有 arguments"></a>2. 没有 arguments</h3><h3 id="3-不能通过-new-关键字调用"><a href="#3-不能通过-new-关键字调用" class="headerlink" title="3. 不能通过 new 关键字调用"></a>3. 不能通过 new 关键字调用</h3><h3 id="4-没有原型"><a href="#4-没有原型" class="headerlink" title="4. 没有原型"></a>4. 没有原型</h3><h3 id="5-没有-super"><a href="#5-没有-super" class="headerlink" title="5. 没有 super"></a>5. 没有 super</h3><blockquote><p>this 和 super 的区别：<br>  this 关键词指向函数所在的当前对象<br>  super <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super">关键字用于访问和调用一个对象的副对象上的函数</a><br>  继承的子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象</p></blockquote><h3 id="6-没有-new-target"><a href="#6-没有-new-target" class="headerlink" title="6. 没有 new.target"></a>6. 没有 new.target</h3><blockquote><p>因为不能使用 new 调用，所以也没有 new.target 值。<br>new是从构造函数生成实例对象的命令。ES6 为new命令引入了一个new.target属性，<br>该属性一般用在构造函数之中，返回new命令作用于的那个构造函数。<br>如果构造函数不是通过new命令或Reflect.construct()调用的，<br>new.target会返回undefined，因此这个属性可以用来确定构造函数是怎么调用的</p></blockquote>]]></content>
     
     
     <categories>
