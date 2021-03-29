@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      114 字
+      124 字
     </span>
   
 
@@ -227,10 +227,10 @@
             <h1 style="display: none">insertSort</h1>
             
             <div class="markdown-body">
-              <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><blockquote>
+              <h2 id="插入排序-稳定性-稳定-时间复杂度-O-n-2"><a href="#插入排序-稳定性-稳定-时间复杂度-O-n-2" class="headerlink" title="插入排序 稳定性(稳定) 时间复杂度 O(n^2)"></a>插入排序 稳定性(稳定) 时间复杂度 O(n^2)</h2><blockquote>
 <p>将左侧看成一个有序数组 每次将一个数字插入该有序序列 插入时 从有序序列的最右侧比较 若比较的数较大 后移一位</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>]<br><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) &#123;<br>    <span class="hljs-keyword">var</span> temp = arr[i + <span class="hljs-number">1</span>]<br>    <span class="hljs-keyword">var</span> targetIndex = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j = i + <span class="hljs-number">1</span>; j &gt; <span class="hljs-number">0</span>; j--) &#123;<br>        <span class="hljs-keyword">if</span>(temp &lt; arr[j - <span class="hljs-number">1</span>]) &#123;<br>            arr[j] = arr[j - <span class="hljs-number">1</span>]<br>            targetIndex = j - <span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>    arr[targetIndex] = temp<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs inform7">var arr = <span class="hljs-comment">[9, 4, 3, 1, 5, 7, 8, 2]</span><br><br>for(let i = 1; i &lt; arr.length; i++) &#123;<br>    let target = i<br>    for(var j = i - 1; j &gt;= 0; j--) &#123;<br>        if(arr<span class="hljs-comment">[target]</span> &lt; arr<span class="hljs-comment">[j]</span>)&#123;<br>            <span class="hljs-comment">[arr<span class="hljs-comment">[j]</span>, arr<span class="hljs-comment">[target]</span>]</span> = <span class="hljs-comment">[arr<span class="hljs-comment">[target]</span>, arr<span class="hljs-comment">[j]</span>]</span><br>                target = j<br>        &#125; else &#123;<br>            break;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -261,6 +261,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/03/29/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">环境配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
