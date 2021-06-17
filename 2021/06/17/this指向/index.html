@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>优秀文章 - lei</title>
+  <title>this指向 - lei</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="优秀文章">
+            <span class="h2" id="subtitle" title="this指向">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-31 21:48" pubdate>
-        2021年3月31日 晚上
+      <time datetime="2021-06-17 22:53" pubdate>
+        2021年6月17日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9 字
+      699 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      9
        分钟
     </span>
   
@@ -224,12 +224,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">优秀文章</h1>
+            <h1 style="display: none">this指向</h1>
             
             <div class="markdown-body">
-              <h2 id="优秀文章"><a href="#优秀文章" class="headerlink" title="优秀文章"></a>优秀文章</h2><ol>
-<li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html">尾调用优化</a></li>
-</ol>
+              <h2 id="浏览器环境"><a href="#浏览器环境" class="headerlink" title="浏览器环境"></a>浏览器环境</h2><h4 id="1-函数外面的-this，即全局作用域的-this-指向-window，-严格模式下，函数里面的-this-指向-undefined-函数外面的-this-还是指向"><a href="#1-函数外面的-this，即全局作用域的-this-指向-window，-严格模式下，函数里面的-this-指向-undefined-函数外面的-this-还是指向" class="headerlink" title="1. 函数外面的 this，即全局作用域的 this 指向 window， 严格模式下，函数里面的 this 指向 undefined, 函数外面的 this 还是指向"></a>1. 函数外面的 this，即全局作用域的 this 指向 window， 严格模式下，函数里面的 this 指向 undefined, 函数外面的 this 还是指向</h4><h4 id="2-函数内部的-this-总是指向直接调用者，如果没有直接调用者，隐含调用者是-window"><a href="#2-函数内部的-this-总是指向直接调用者，如果没有直接调用者，隐含调用者是-window" class="headerlink" title="2. 函数内部的 this 总是指向直接调用者，如果没有直接调用者，隐含调用者是 window"></a>2. 函数内部的 this 总是指向直接调用者，如果没有直接调用者，隐含调用者是 window</h4><h4 id="3-实用-new-调用一个函数，函数里面的-this-指向实例对象"><a href="#3-实用-new-调用一个函数，函数里面的-this-指向实例对象" class="headerlink" title="3. 实用 new 调用一个函数，函数里面的 this 指向实例对象"></a>3. 实用 new 调用一个函数，函数里面的 this 指向实例对象</h4><h4 id="4-DOM事件回调里面，this指向绑定事件的对象"><a href="#4-DOM事件回调里面，this指向绑定事件的对象" class="headerlink" title="4. DOM事件回调里面，this指向绑定事件的对象"></a>4. DOM事件回调里面，this指向绑定事件的对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params">e</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span> === e.currentTarget);   <span class="hljs-comment">// 总是true</span><br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span> === e.target);          <span class="hljs-comment">// 如果target等于currentTarget,这个就为true</span><br>&#125;<br><br><span class="hljs-keyword">const</span> ele = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;test&#x27;</span>);<br><br>ele.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, func);<br><br>currentTarget指的是绑定事件的DOM对象，target指的是触发事件的对象。DOM事件回调里面<span class="hljs-built_in">this</span>总是指向currentTarget，如果触发事件的对象刚好是绑定事件的对象，即target === currentTarget，<span class="hljs-built_in">this</span>也会顺便指向target。如果回调是箭头函数，<span class="hljs-built_in">this</span>是箭头函数申明时作用域的<span class="hljs-built_in">this</span>。<br><br></code></pre></td></tr></table></figure>
+<h4 id="5-箭头函数本身没有-this，箭头函数在被声明时确定-this，会把当前作用域的-this-作为自己的-this"><a href="#5-箭头函数本身没有-this，箭头函数在被声明时确定-this，会把当前作用域的-this-作为自己的-this" class="headerlink" title="5. 箭头函数本身没有 this，箭头函数在被声明时确定 this，会把当前作用域的 this 作为自己的 this"></a>5. 箭头函数本身没有 this，箭头函数在被声明时确定 this，会把当前作用域的 this 作为自己的 this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-number">1.</span>  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;monster&quot;</span>;<br><br>    <span class="hljs-keyword">var</span> obj = &#123;<br>      name: <span class="hljs-string">&quot;andrew&quot;</span>,<br>      func: <span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>      &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> anotherFunc = obj.func;<br><br>    obj.func();      <span class="hljs-comment">// monster</span><br>    anotherFunc();   <span class="hljs-comment">// monster</span><br>    上述代码里面的obj.func()输出也是“monster”，是因为obj在创建时申明了箭头函数，这时候箭头函数会去寻找当前作用域，因为obj是一个对象，并不是作用域，所以这里的作用域是<span class="hljs-built_in">window</span>，<span class="hljs-built_in">this</span>也就是<span class="hljs-built_in">window</span>了。<br><br><span class="hljs-number">2.</span>  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;monster&quot;</span>;<br><br>    <span class="hljs-keyword">var</span> obj = &#123;<br>      name: <span class="hljs-string">&quot;andrew&quot;</span>,<br>      func: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>          getName: <span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>          &#125;<br>        &#125;<br>      &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> anotherFunc = obj.func().getName;<br><br>    obj.func().getName();      <span class="hljs-comment">// andrew</span><br>    anotherFunc();   <span class="hljs-comment">// andrew</span><br>    <br>    obj.func().getName()输出andrew，这里箭头函数是在obj.func()的返回值里申明的，<br>    这时他的<span class="hljs-built_in">this</span>其实就是func()的<span class="hljs-built_in">this</span>，因为他是被obj调用的，所以<span class="hljs-built_in">this</span>指向obj。<br><br>    那为什么anotherFunc()输出也是“小小飞”呢？这是因为anotherFunc()输出的<span class="hljs-built_in">this</span>，<br>    其实在anotherFunc赋值时就确定了：<br><br>    1<span class="hljs-keyword">var</span> anotherFunc = obj.func().getName;其实是先执行了obj.func()<br>    <span class="hljs-number">2</span>执行obj.func()的时候getName箭头函数被申明<br>    <span class="hljs-number">3</span>这时候箭头函数的<span class="hljs-built_in">this</span>应该是当前作用域的<span class="hljs-built_in">this</span>，也就是func()里面的<span class="hljs-built_in">this</span><br>    4func()因为是被obj调用，所以<span class="hljs-built_in">this</span>指向obj<br>    <span class="hljs-number">5</span>调用anotherFunc时，其实<span class="hljs-built_in">this</span>早就确定了，也就是obj，最终输出的是obj.myName。<br>    <br><span class="hljs-number">3.</span>  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;monster&quot;</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;andrew&quot;</span>;<br><br>      <span class="hljs-keyword">const</span> getName = <span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>      &#125;<br><br>      getName();<br>    &#125;<br><br>    <span class="hljs-keyword">new</span> func(); <span class="hljs-comment">// 输出啥？</span><br>    这里输出的是“andrew”，原理还是一样的，箭头函数在申明时<span class="hljs-built_in">this</span>确定为当前作用域的<span class="hljs-built_in">this</span>，在这里就是func的作用域，跟func的<span class="hljs-built_in">this</span>一样指向<span class="hljs-keyword">new</span>出来的实例。如果不用<span class="hljs-keyword">new</span>，而是直接调用，这里的<span class="hljs-built_in">this</span>就指向<span class="hljs-built_in">window</span>。<br><br><br></code></pre></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -241,7 +241,7 @@
                     
                       <a class="hover-with-bg" href="/categories/js/">js</a>
                     
-                      <a class="hover-with-bg" href="/categories/js/%E5%85%B6%E5%AE%83/">其它</a>
+                      <a class="hover-with-bg" href="/categories/js/js%E5%9F%BA%E7%A1%80/">js基础</a>
                     
                   </div>
                 
@@ -262,9 +262,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/06/17/this%E6%8C%87%E5%90%91/">
+                      <a href="/2021/06/17/void%E4%B8%8Eundefined%E7%9A%84%E6%8C%87%E5%90%91/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">this指向</span>
+                        <span class="hidden-mobile">void与undefined的指向</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -272,8 +272,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/29/get%E5%92%8Cpost/">
-                        <span class="hidden-mobile">get和post</span>
+                      <a href="/2021/03/31/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0/">
+                        <span class="hidden-mobile">优秀文章</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
