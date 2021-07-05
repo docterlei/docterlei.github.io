@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>我的快捷键技巧</title>
+    <link href="/2021/07/05/%E6%88%91%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8A%80%E5%B7%A7/"/>
+    <url>/2021/07/05/%E6%88%91%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8A%80%E5%B7%A7/</url>
+    
+    <content type="html"><![CDATA[<ol><li><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a><a href="https://www.bilibili.com/video/BV1db411a7gq">参考文章</a></h3></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>其它</category>
+      
+      <category>快捷键</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>其它</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vscode快捷键</title>
+    <link href="/2021/07/05/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2021/07/05/Vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<ol><li>command + shift + p 全局命令面板</li><li>command + p 快速打开最近打开的文件</li><li>command + shift + n 打开新的编辑器窗口</li><li>command + shift + w 关闭编辑器（自定义的快捷键）</li><li>option + ⬆️/⬇️ 移动行上下</li><li>shift + option + ⬆️/⬇️ 在当前行上下复制当前行</li><li>command + shift + enter 在当前行上插入新的一行</li><li>command + k command + 0 折叠所有区域代码</li><li>command + k command + 0 展开所有折叠的子区域代码</li></ol><h3 id="如何打开设置文件-先打开命令面板-然后输入settings-选择Open-settings-JSON"><a href="#如何打开设置文件-先打开命令面板-然后输入settings-选择Open-settings-JSON" class="headerlink" title="如何打开设置文件 先打开命令面板 然后输入settings 选择Open settings(JSON)"></a>如何打开设置文件 先打开命令面板 然后输入settings 选择Open settings(JSON)</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>其它</category>
+      
+      <category>快捷键</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>其它</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>void与undefined的指向</title>
     <link href="/2021/06/17/void%E4%B8%8Eundefined%E7%9A%84%E6%8C%87%E5%90%91/"/>
     <url>/2021/06/17/void%E4%B8%8Eundefined%E7%9A%84%E6%8C%87%E5%90%91/</url>
@@ -62,7 +116,7 @@
     <link href="/2021/03/31/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0/"/>
     <url>/2021/03/31/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0/</url>
     
-    <content type="html"><![CDATA[<h2 id="优秀文章"><a href="#优秀文章" class="headerlink" title="优秀文章"></a>优秀文章</h2><ol><li><a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html">尾调用优化</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="优秀文章"><a href="#优秀文章" class="headerlink" title="优秀文章"></a>优秀文章</h2><ol><li><a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html">尾调用优化</a></li><li><a href="https://juejin.cn/post/6974184935804534815">我在工作中是如何使用 git 的</a></li><li><a href="https://juejin.cn/post/6844903890278694919#heading-5">彻底弄懂前端路由</a></li></ol>]]></content>
     
     
     <categories>
