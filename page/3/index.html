@@ -181,6 +181,133 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">网络模型</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">
+          
+          
+            
+          
+          OSI 和 TCP/IP模型对比
+TCP/IP 模型对应的相关协议及对应数据单位
+应用层：
+HTTP, FTP
+报文(message)
+
+
+传输层：
+TCP, UDP
+数据段(segment)
+
+
+网络层：
+IP, ICMP 
+分组或者数据包(packets)
+
+
+数据链路层：
+ARP, RARP
+帧(frame) 物理层传输的单位是比特(bit)
+
+
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-22 22:21" pubdate>
+              2021-02-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/22/http%E7%BC%93%E5%AD%98/">http缓存</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/22/http%E7%BC%93%E5%AD%98/">
+          
+          
+            
+          
+          HTTP缓存分为强制缓存和协商缓存强制缓存有俩个字段来表明失效规则（Expires / Cache-control）
+
+Expires的值表示服务端返回的到期时间，即下一次请求，如果时间小于服务器到期时间 直接使用缓存数据 
+Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，一般用来向下兼容
+到期时间是由服务端生成的，如果修改了客户端的时间，就会导致缓存命中的误差
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-22 22:11" pubdate>
+              2021-02-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/%E7%BC%93%E5%AD%98/">缓存</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">箭头函数</a>
       </h1>
 
@@ -592,114 +719,11 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/01/29/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/">词法作用域和动态作用域</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/01/29/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/">
-          
-          
-            
-          
-          词法作用域和动态作用域作用域一套用来存储变量和访问变量的规则
-静态作用域与动态作用域JavaScript采用的是静态作用域，函数的作用域在函数定义的时候就决定了，而与词法作用域相对的是动态作用域，函数的作用域是在函数调用时才决定的
-12345678910111213141516var a = 1;function foo() &#123;    console.log(a)&#125;functi
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-29 21:52" pubdate>
-              2021-01-29
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/js/">js</a>
-            
-              <a href="/categories/js/js%E5%9F%BA%E7%A1%80/">js基础</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/js/">js</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/01/17/%E5%8E%9F%E5%9E%8B%E5%88%B0%E5%8E%9F%E5%9E%8B%E9%93%BE/">原型到原型链</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/01/17/%E5%8E%9F%E5%9E%8B%E5%88%B0%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-          
-          
-            
-          
-          原型到原型链prototype每个函数都有一个prototype属性，这个属性指向了一个对象，这个对象正是用该构造函数创建的实例的原型
-123456789// prototype 是函数才有的属性function Person()&#123;&#125;Person.prototype.alias = &#x27;monster&#x27;const michael = new Person()c
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-17 18:29" pubdate>
-              2021-01-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/js/">js</a>
-            
-              <a href="/categories/js/js%E5%9F%BA%E7%A1%80/">js基础</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/js/">js</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   
