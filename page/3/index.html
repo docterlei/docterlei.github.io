@@ -51,7 +51,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>awake</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Leon</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -181,11 +181,122 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/23/xss%E6%94%BB%E5%87%BB/">xss攻击</a>
+        <a href="/2021/02/24/JS/React%E7%9B%B8%E5%85%B3/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%BD%E9%87%8F%E4%B8%8D%E8%A6%81%E7%94%A8index%E4%BD%9C%E4%B8%BAkey/">为什么尽量不要用index作为key</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/23/xss%E6%94%BB%E5%87%BB/">
+        <a href="/2021/02/24/JS/React%E7%9B%B8%E5%85%B3/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%BD%E9%87%8F%E4%B8%8D%E8%A6%81%E7%94%A8index%E4%BD%9C%E4%B8%BAkey/">
+          
+          
+            
+          
+          1.因为这样做会导致性能变差(这个策略在元素不进行重新排序时比较合适，但一旦有顺序修改，diff 就会变得慢, 因为组件的子元素会重新渲染)
+index为key：12345变化前数组的值是[1,2,3,4]，key就是对应的下标：0，1，2，3,   变化后数组的值是[4,3,2,1]，key对应的下标也是：0，1，2，3那么diff算法在变化前的数组找到key =0的值是1，在变化后数组里找到的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 21:32" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/js/">js</a>
+            
+              <a href="/categories/js/react%E7%9B%B8%E5%85%B3/">react相关</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/js/">js</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/23/%E7%BD%91%E7%BB%9C/HTTP/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%8E%B7%E5%BE%97%E9%A1%B5%E9%9D%A2%E5%88%B0%E8%BF%87%E7%A8%8B/">从输入url到获得页面到过程</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/23/%E7%BD%91%E7%BB%9C/HTTP/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%8E%B7%E5%BE%97%E9%A1%B5%E9%9D%A2%E5%88%B0%E8%BF%87%E7%A8%8B/">
+          
+          
+            
+          
+          从输入url到获得页面到过程1. 构建请求
+使用浏览器进行请求后，浏览器会先判断地址栏中输入的是 query（关键字）还是URL，
+
+
+如果是URL，则把URL转发给网络进程，网络进程会构建请求行信息，构建好之后，浏览器就准备发起网络请求
+如果是关键字，浏览器会自动生成一个带有我们搜索关键字的 URL，然后向默认的搜索引擎发起连接请求，后面和输入 URL 一样
+
+
+
+2. 查找强缓存
+浏览器在发起
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-23 22:26" pubdate>
+              2021-02-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+              <a href="/categories/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/23/%E7%BD%91%E7%BB%9C/%E5%AE%89%E5%85%A8/xss%E6%94%BB%E5%87%BB/">xss攻击</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/23/%E7%BD%91%E7%BB%9C/%E5%AE%89%E5%85%A8/xss%E6%94%BB%E5%87%BB/">
           
           
             
@@ -237,84 +348,11 @@ XSS分类
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">网络模型</a>
+        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C/HTTP/http%E7%BC%93%E5%AD%98/">http缓存</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">
-          
-          
-            
-          
-          OSI 和 TCP/IP模型对比
-TCP/IP 模型对应的相关协议及对应数据单位
-应用层：
-HTTP, FTP
-报文(message)
-
-
-传输层：
-TCP, UDP
-数据段(segment)
-
-
-网络层：
-IP, ICMP 
-分组或者数据包(packets)
-
-
-数据链路层：
-ARP, RARP
-帧(frame) 物理层传输的单位是比特(bit)
-
-
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-22 22:21" pubdate>
-              2021-02-22
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-              <a href="/categories/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/22/http%E7%BC%93%E5%AD%98/">http缓存</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/22/http%E7%BC%93%E5%AD%98/">
+        <a href="/2021/02/22/%E7%BD%91%E7%BB%9C/HTTP/http%E7%BC%93%E5%AD%98/">
           
           
             
@@ -364,11 +402,11 @@ Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">箭头函数</a>
+        <a href="/2021/02/21/JS/Es6%E7%9B%B8%E5%85%B3/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">箭头函数</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/21/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+        <a href="/2021/02/21/JS/Es6%E7%9B%B8%E5%85%B3/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
           
           
             
@@ -415,11 +453,11 @@ this 和 super 的区别：  this 关键词指向函数所在的当前对象  su
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/21/%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/">类数组对象与arguments</a>
+        <a href="/2021/02/21/JS/JS%E5%9F%BA%E7%A1%80/%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/">类数组对象与arguments</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/21/%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/">
+        <a href="/2021/02/21/JS/JS%E5%9F%BA%E7%A1%80/%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/">
           
           
             
@@ -468,11 +506,11 @@ this 和 super 的区别：  this 关键词指向函数所在的当前对象  su
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/07/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">参数传递</a>
+        <a href="/2021/02/07/JS/JS%E5%9F%BA%E7%A1%80/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">参数传递</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/07/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">
+        <a href="/2021/02/07/JS/JS%E5%9F%BA%E7%A1%80/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">
           
           
             
@@ -518,63 +556,11 @@ this 和 super 的区别：  this 关键词指向函数所在的当前对象  su
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/07/Variables/">Variables</a>
+        <a href="/2021/02/07/JS/JS%E5%9F%BA%E7%A1%80/%E9%97%AD%E5%8C%85/">闭包</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/07/Variables/">
-          
-          
-            
-          
-          Variables1. 使用有意义且可读的变量名Bad：1const yyyymmdstr = moment().format(&quot;YYYY/MM/DD&quot;);
-Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
-2. 对同一个变量类型使用同一词语Bad：123getUserInfo();getCli
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-07 20:29" pubdate>
-              2021-02-07
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/js/">js</a>
-            
-              <a href="/categories/js/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93JS/">代码整洁之道JS</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/js/">js</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/07/%E9%97%AD%E5%8C%85/">闭包</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/07/%E9%97%AD%E5%8C%85/">
+        <a href="/2021/02/07/JS/JS%E5%9F%BA%E7%A1%80/%E9%97%AD%E5%8C%85/">
           
           
             
@@ -624,17 +610,18 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/02/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">作用域链</a>
+        <a href="/2021/02/07/JS/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93JS/Variables/">Variables</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/02/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">
+        <a href="/2021/02/07/JS/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93JS/Variables/">
           
           
             
           
-          作用域链当查找变量的时候，会先从当前上下文的变量对象中查找，如果没有找到，就会从父级(词法层面上的父级)执行上下文的变量对象中查找一直找到全局上下文的变量对象，也就是全局对象。这样由多个执行上下文的变量对象构成的链表就叫做作用域链。
-函数创建函数的作用域在函数定义的时候就决定了。这是因为函数有一个内部属性 [[scope]]，当函数创建的时候，就会保存所有父变量对象到其中，可以理解 [[scope
+          Variables1. 使用有意义且可读的变量名Bad：1const yyyymmdstr = moment().format(&quot;YYYY/MM/DD&quot;);
+Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
+2. 对同一个变量类型使用同一词语Bad：123getUserInfo();getCli
         </a>
       </p>
 
@@ -642,8 +629,8 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-02 23:06" pubdate>
-              2021-02-02
+            <time datetime="2021-02-07 20:29" pubdate>
+              2021-02-07
             </time>
           </div>
         
@@ -653,7 +640,7 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
             
               <a href="/categories/js/">js</a>
             
-              <a href="/categories/js/js%E5%9F%BA%E7%A1%80/">js基础</a>
+              <a href="/categories/js/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93JS/">代码整洁之道JS</a>
             
           </div>
         
@@ -675,19 +662,17 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/02/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/">变量对象</a>
+        <a href="/2021/02/02/JS/JS%E5%9F%BA%E7%A1%80/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">作用域链</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/02/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/">
+        <a href="/2021/02/02/JS/JS%E5%9F%BA%E7%A1%80/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">
           
           
             
           
-          变量对象变量对象是与执行上下文有关的数据域，存储了栈上下文中定义的变量和函数
-全局上下文全局上下文中的变量对象就是全局对象，全局对象是作用域链的头
-函数上下文在函数上下文中，我们用活动对象(activation object, AO)来表示变量对象。
-活动对象和变量对象其实是一个东西，只是变量对象是规范上的或者说是引擎实现上的，不可在 JavaScript 环境中访问，只有到当进入一个执行上下文中
+          作用域链当查找变量的时候，会先从当前上下文的变量对象中查找，如果没有找到，就会从父级(词法层面上的父级)执行上下文的变量对象中查找一直找到全局上下文的变量对象，也就是全局对象。这样由多个执行上下文的变量对象构成的链表就叫做作用域链。
+函数创建函数的作用域在函数定义的时候就决定了。这是因为函数有一个内部属性 [[scope]]，当函数创建的时候，就会保存所有父变量对象到其中，可以理解 [[scope
         </a>
       </p>
 
@@ -695,7 +680,7 @@ Good：1const currentDate = moment().format(&quot;YYYY/MM/DD&quot;);
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-02 22:15" pubdate>
+            <time datetime="2021-02-02 23:06" pubdate>
               2021-02-02
             </time>
           </div>
