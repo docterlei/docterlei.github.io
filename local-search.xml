@@ -5,15 +5,17 @@
   
   <entry>
     <title>观察者</title>
-    <link href="/2021/08/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85/"/>
-    <url>/2021/08/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85/</url>
+    <link href="/2021/08/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85/"/>
+    <url>/2021/08/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h3 id="观察者模式允许你定义一种订阅机制，可在对象事件发生时通知多个-“观察”-该对象的其他对象"><a href="#观察者模式允许你定义一种订阅机制，可在对象事件发生时通知多个-“观察”-该对象的其他对象" class="headerlink" title="观察者模式允许你定义一种订阅机制，可在对象事件发生时通知多个 “观察” 该对象的其他对象"></a>观察者模式允许你定义一种订阅机制，可在对象事件发生时通知多个 “观察” 该对象的其他对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
       <category>设计模式</category>
+      
+      <category>行为模式</category>
       
       <category>观察者</category>
       
@@ -35,7 +37,7 @@
     <link href="/2021/08/11/JS/React%E7%9B%B8%E5%85%B3/useRef/"/>
     <url>/2021/08/11/JS/React%E7%9B%B8%E5%85%B3/useRef/</url>
     
-    <content type="html"><![CDATA[<h3 id="useRef-是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象"><a href="#useRef-是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象" class="headerlink" title="useRef 是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象"></a>useRef 是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象</h3><h3 id="使用-useRef-的注意"><a href="#使用-useRef-的注意" class="headerlink" title="使用 useRef 的注意"></a>使用 useRef 的注意</h3><ol><li>ref值的改变不易触发 re-render</li><li>将 ref 的值当作 useEffect 的依赖数组是没有用的</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="useRef-是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象"><a href="#useRef-是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象" class="headerlink" title="useRef 是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象"></a>useRef 是React提供的一个标准的hooks，它会返回一个在整个组件的生命周期中你可以使用的对象</h3><h3 id="使用-useRef-的注意"><a href="#使用-useRef-的注意" class="headerlink" title="使用 useRef 的注意"></a>使用 useRef 的注意</h3><ol><li>ref值的改变不会触发 re-render</li><li>将 ref 的值当作 useEffect 的依赖数组是没有用的</li></ol>]]></content>
     
     
     <categories>
@@ -436,6 +438,33 @@
   
   
   <entry>
+    <title>bubbleSort</title>
+    <link href="/2021/03/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/"/>
+    <url>/2021/03/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/</url>
+    
+    <content type="html"><![CDATA[<h2 id="俩数求和"><a href="#俩数求和" class="headerlink" title="俩数求和"></a>俩数求和</h2><blockquote><p>真题描述： 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]</p></blockquote><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs livescript"><span class="hljs-keyword">const</span> twoSum = (nums, target) =&gt; &#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">map</span> = &#123;&#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">map</span>[target - nums[i]] !== <span class="hljs-literal">undefined</span>) &#123;<br>            <span class="hljs-keyword">return</span> [<span class="hljs-keyword">map</span>[target - nums[i]], i]<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">map</span>[nums[i]] = i;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+      <category>数组</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>utils</title>
     <link href="/2021/03/16/JS/%E5%85%B6%E5%AE%83/utils/"/>
     <url>/2021/03/16/JS/%E5%85%B6%E5%AE%83/utils/</url>
@@ -725,6 +754,35 @@
     <tags>
       
       <tag>js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>枚举</title>
+    <link href="/2021/02/07/TS/index/"/>
+    <url>/2021/02/07/TS/index/</url>
+    
+    <content type="html"><![CDATA[<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h3 id="枚举类型用于取值被限定值一定范围内的场景，比如一周只能有七天，颜色限定等"><a href="#枚举类型用于取值被限定值一定范围内的场景，比如一周只能有七天，颜色限定等" class="headerlink" title="枚举类型用于取值被限定值一定范围内的场景，比如一周只能有七天，颜色限定等"></a>枚举类型用于取值被限定值一定范围内的场景，比如一周只能有七天，颜色限定等</h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs inform7">---<br>enum <span class="hljs-keyword">Gender</span>&#123;<br>    Male,<br>    Female<br>&#125;<br><br>let i: &#123;name: string, <span class="hljs-keyword">gender</span>: <span class="hljs-keyword">Gender</span>&#125;<br><br>i = &#123;<br>    name: &#x27;zs&#x27;,<br>    <span class="hljs-keyword">gender</span>: <span class="hljs-keyword">Gender</span>.Male<br>&#125;<br><br>编译后<br><br>var <span class="hljs-keyword">Gender</span>;<br>(function (<span class="hljs-keyword">Gender</span>) &#123;<br>    <span class="hljs-keyword">Gender</span><span class="hljs-comment">[Gender<span class="hljs-comment">[&quot;Male&quot;]</span> = 0]</span> = <span class="hljs-string">&quot;Male&quot;</span>;<br>    <span class="hljs-keyword">Gender</span><span class="hljs-comment">[Gender<span class="hljs-comment">[&quot;Female&quot;]</span> = 1]</span> = <span class="hljs-string">&quot;Female&quot;</span>; // 赋值表达式有返回值 值就是赋的那个值<br>&#125;)(<span class="hljs-keyword">Gender</span> || (<span class="hljs-keyword">Gender</span> = &#123;&#125;));<br>var i;<br>i = &#123;<br>    name: &#x27;zs&#x27;,<br>    <span class="hljs-keyword">gender</span>: <span class="hljs-keyword">Gender</span>.Male<br>&#125;;<br><br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>ts</category>
+      
+      <category>ts基础</category>
+      
+      <category>枚举</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ts</tag>
       
     </tags>
     
