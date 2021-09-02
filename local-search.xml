@@ -439,8 +439,8 @@
   
   <entry>
     <title>bubbleSort</title>
-    <link href="/2021/03/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/"/>
-    <url>/2021/03/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/</url>
+    <link href="/2021/03/24/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/"/>
+    <url>/2021/03/24/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/</url>
     
     <content type="html"><![CDATA[<h2 id="俩数求和"><a href="#俩数求和" class="headerlink" title="俩数求和"></a>俩数求和</h2><blockquote><p>真题描述： 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]</p></blockquote><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs livescript"><span class="hljs-keyword">const</span> twoSum = (nums, target) =&gt; &#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">map</span> = &#123;&#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">map</span>[target - nums[i]] !== <span class="hljs-literal">undefined</span>) &#123;<br>            <span class="hljs-keyword">return</span> [<span class="hljs-keyword">map</span>[target - nums[i]], i]<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">map</span>[nums[i]] = i;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
     
