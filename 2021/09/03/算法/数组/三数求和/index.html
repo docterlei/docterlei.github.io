@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>标签 - 算法 - lei</title>
+  <title>三数求和 - lei</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -146,17 +162,50 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - 算法">
+            <span class="h2" id="subtitle" title="三数求和">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-03 22:02" pubdate>
+        2021年9月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      221 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -165,64 +214,92 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/09/03/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/%E4%B8%89%E6%95%B0%E6%B1%82%E5%92%8C/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">三数求和</span>
-      <time style="float: right;">09-03</time>
-    </a>
-  
-    
-    <a href="/2021/03/26/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/insertSort/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">insertSort</span>
-      <time style="float: right;">03-26</time>
-    </a>
-  
-    
-    <a href="/2021/03/26/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/selectionSort/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">selectionSort</span>
-      <time style="float: right;">03-26</time>
-    </a>
-  
-    
-    <a href="/2021/03/24/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/%E4%BF%A9%E6%95%B0%E6%B1%82%E5%92%8C/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">俩数求和</span>
-      <time style="float: right;">03-24</time>
-    </a>
-  
-    
-    <a href="/2021/03/24/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/bubbleSort/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">bubbleSort</span>
-      <time style="float: right;">03-24</time>
-    </a>
-  
-</div>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">三数求和</h1>
+            
+            <div class="markdown-body">
+              <h2 id="俩数求和"><a href="#俩数求和" class="headerlink" title="俩数求和"></a>俩数求和</h2><blockquote>
+<p>真题描述： 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c, 使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。<br>给定数组 nums = [-1, 0, 1, 2, -1, -4]， 满足要求的三元组集合为： [ [-1, 0, 1], [-1, -1, 2] ]</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> threeSum = <span class="hljs-function">(<span class="hljs-params">nums</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">let</span> ans = [];<br>    <span class="hljs-keyword">const</span> len = nums.length;<br>    <span class="hljs-keyword">if</span>(nums == <span class="hljs-literal">null</span> | len &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> ans;<br>    nums.sort(<span class="hljs-function">(<span class="hljs-params">a,b</span>) =&gt;</span> a - b)<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">2</span>; i++) &#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&gt;<span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">if</span>(i &gt; <span class="hljs-number">0</span> &amp;&amp; nums[i] === nums[i - <span class="hljs-number">1</span>]) <span class="hljs-keyword">continue</span><br>        <span class="hljs-keyword">let</span> L = i + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">let</span> R = len - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span>(L&lt;R) &#123;<br>            <span class="hljs-keyword">const</span> sum = nums[i] + nums[L] + nums[R]<br>            <span class="hljs-keyword">if</span>(sum === <span class="hljs-number">0</span>) &#123;<br>                ans.push([nums[i], nums[L], nums[R]])<br>                <span class="hljs-keyword">while</span>(L &lt; R &amp;&amp; nums[L] === nums[L+<span class="hljs-number">1</span>]) L++;<br>                <span class="hljs-keyword">while</span>(L &lt; R &amp;&amp; nums[R] === nums[R-<span class="hljs-number">1</span>]) R--;<br>                L++;<br>                R--;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(sum &lt; <span class="hljs-number">0</span>) L++;<br>             <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(sum &gt; <span class="hljs-number">0</span>) R--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 
 
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/">数组</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85/">
+                        <span class="hidden-mobile">观察者</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -302,9 +379,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
